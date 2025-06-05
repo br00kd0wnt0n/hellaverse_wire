@@ -7,10 +7,12 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "postinstall": "node -e \"try { require('fs').accessSync('public/index.html', require('fs').constants.R_OK); console.log('Static files verified'); } catch (e) { console.error('Error: Static files not found!'); process.exit(1); }\"",
-    "test": "node -e \"require('http').get('http://localhost:${PORT:-3000}/health', (r) => r.statusCode === 200 ? process.exit(0) : process.exit(1))\""
+    "test": "node -e \"require('http').get('http://localhost:${PORT:-3000}/health', (r) => r.statusCode === 200 ? process.exit(0) : process.exit(1))\"",
+    "railway:start": "node server.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "dependencies": {
     "express": "^4.18.2",
